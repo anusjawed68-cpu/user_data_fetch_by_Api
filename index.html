@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>⚡ UserSpace</h2>
+        <p>WORKSPACE</p>
+        <div class="nav active">👥 User Management</div>
+        <div class="sidebar-bottom">Admin Panel</div>
+    </div>
+
+    <main>
+        <header>
+            <div>
+                <p class="eyebrow">WORKSPACE / USERS</p>
+                <h1>User Management</h1>
+                <p class="subtitle">Manage and view all your users.</p>
+            </div>
+            <div class="admin">👤 Administrator</div>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card">
+                <p>Total Users</p>
+                <h2 id="totalUsers">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Active Users</p>
+                <h2 id="activeUsers">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Admins</p>
+                <h2 id="adminUsers">0</h2>
+            </div>
+        </section>
+
+        <section class="directory">
+            <div class="directory-heading">
+                <div>
+                    <h2>All Users</h2>
+                    <p>Search and filter your users.</p>
+                </div>
+                <span id="resultCount">Loading...</span>
+            </div>
+
+            <div class="filters">
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search name, email or username..."
+                >
+
+                <select id="roleFilter">
+                    <option value="all">All Roles</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Editor">Editor</option>
+                    <option value="Viewer">Viewer</option>
+                </select>
+
+                <select id="statusFilter">
+                    <option value="all">All Statuses</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+            </div>
+
+            <p id="message">Loading users...</p>
+
+            <div id="userGrid" class="user-grid"></div>
+
+            <div id="emptyState" hidden>
+                <h3>No users found</h3>
+                <p>Try another search or filter.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
